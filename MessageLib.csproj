@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C1FC580E-D2E3-40B7-B2F3-E8E9BCF11FEA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MessageLib</RootNamespace>
+    <AssemblyName>MessageLib</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PlayerIOClient">
+      <HintPath>..\..\NetworkSDK\DotNet\PlayerIOClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConnectionExtensions.cs" />
+    <Compile Include="IOutboundPacket.cs" />
+    <Compile Include="IPacketListener.cs" />
+    <Compile Include="Math\DoubleVector.cs" />
+    <Compile Include="Math\IntVector.cs" />
+    <Compile Include="IInboundPacket.cs" />
+    <Compile Include="PacketDispatcher.cs" />
+    <Compile Include="PacketHandler.cs" />
+    <Compile Include="PacketInfo.cs" />
+    <Compile Include="Packets\In\PacketAllowPotions.cs" />
+    <Compile Include="Packets\In\PacketInit.cs" />
+    <Compile Include="Packets\In\PacketPlayerAccessAcquired.cs" />
+    <Compile Include="Packets\In\PacketPlayerAccessLost.cs" />
+    <Compile Include="Packets\In\PacketBackgroundColor.cs" />
+    <Compile Include="Packets\In\PacketDoorClosed.cs" />
+    <Compile Include="Packets\In\PacketDoorOpened.cs" />
+    <Compile Include="Packets\In\PacketPlayerBrickPlace.cs" />
+    <Compile Include="Packets\In\PacketPlayerChat.cs" />
+    <Compile Include="Packets\In\PacketPlayerCoindoorPlace.cs" />
+    <Compile Include="Packets\In\PacketPlayerCollectCoin.cs" />
+    <Compile Include="Packets\In\PacketPlayerCrown.cs" />
+    <Compile Include="Packets\In\PacketMessageBox.cs" />
+    <Compile Include="Packets\In\PacketPlayerFaceChange.cs" />
+    <Compile Include="Packets\In\PacketPlayerJoin.cs" />
+    <Compile Include="Packets\In\PacketPlayerLeave.cs" />
+    <Compile Include="Packets\In\PacketPlayerLevelup.cs" />
+    <Compile Include="Packets\In\PacketPlayerMove.cs" />
+    <Compile Include="Packets\In\PacketPlayerNoteblockPlace.cs" />
+    <Compile Include="Packets\In\PacketPlayerOldChat.cs" />
+    <Compile Include="Packets\In\PacketPlayerPortalPlace.cs" />
+    <Compile Include="Packets\In\PacketPlayerPotion.cs" />
+    <Compile Include="Packets\In\PacketPlayerQuickchat.cs" />
+    <Compile Include="Packets\In\PacketPlayerReceiveWootup.cs" />
+    <Compile Include="Packets\In\PacketPlayerRotatablePlace.cs" />
+    <Compile Include="Packets\In\PacketPlayerSignPlace.cs" />
+    <Compile Include="Packets\In\PacketPlayerTeleport.cs" />
+    <Compile Include="Packets\In\PacketPlayerTextAdd.cs" />
+    <Compile Include="Packets\In\PacketPlayerToggleGod.cs" />
+    <Compile Include="Packets\In\PacketPlayerToggleGuardian.cs" />
+    <Compile Include="Packets\In\PacketPlayerToggleMod.cs" />
+    <Compile Include="Packets\In\PacketPlayerTrophy.cs" />
+    <Compile Include="Packets\In\PacketPlayerWootup.cs" />
+    <Compile Include="Packets\In\PacketPlayerWorldPortalPlace.cs" />
+    <Compile Include="Packets\In\PacketRoomClear.cs" />
+    <Compile Include="Packets\In\PacketRoomMeta.cs" />
+    <Compile Include="Packets\In\PacketRoomTele.cs" />
+    <Compile Include="Packets\In\PacketUpgrade.cs" />
+    <Compile Include="Packets\In\PacketWrite.cs" />
+    <Compile Include="Packets\Out\PacketAllowPotions.cs" />
+    <Compile Include="Packets\Out\PacketInit.cs" />
+    <Compile Include="Packets\Out\PacketPlayerBrickPlace.cs" />
+    <Compile Include="Packets\Out\PacketPlayerCake.cs" />
+    <Compile Include="Packets\Out\PacketPlayerChat.cs" />
+    <Compile Include="Packets\Out\PacketPlayerCheckpoint.cs" />
+    <Compile Include="Packets\Out\PacketPlayerCoindoorPlace.cs" />
+    <Compile Include="Packets\Out\PacketPlayerCollectCoin.cs" />
+    <Compile Include="Packets\Out\PacketPlayerCrown.cs" />
+    <Compile Include="Packets\Out\PacketPlayerDeath.cs" />
+    <Compile Include="Packets\Out\PacketPlayerDeathdoorPlace.cs" />
+    <Compile Include="Packets\Out\PacketPlayerDiamond.cs" />
+    <Compile Include="Packets\Out\PacketPlayerFace.cs" />
+    <Compile Include="Packets\Out\PacketPlayerGod.cs" />
+    <Compile Include="Packets\Out\PacketPlayerHologram.cs" />
+    <Compile Include="Packets\Out\PacketPlayerKey.cs" />
+    <Compile Include="Packets\Out\PacketPlayerMove.cs" />
+    <Compile Include="Packets\Out\PacketPlayerNoteblockPlace.cs" />
+    <Compile Include="Packets\Out\PacketPlayerPortalPlace.cs" />
+    <Compile Include="Packets\Out\PacketPlayerPotion.cs" />
+    <Compile Include="Packets\Out\PacketPlayerQuickchat.cs" />
+    <Compile Include="Packets\Out\PacketPlayerRotatablePlace.cs" />
+    <Compile Include="Packets\Out\PacketPlayerSignPlace.cs" />
+    <Compile Include="Packets\Out\PacketPlayerSwitchPlace.cs" />
+    <Compile Include="Packets\Out\PacketPlayerTrophy.cs" />
+    <Compile Include="Packets\Out\PacketPlayerTryAccess.cs" />
+    <Compile Include="Packets\Out\PacketPlayerWorldPortalPlace.cs" />
+    <Compile Include="Packets\Out\PacketReady.cs" />
+    <Compile Include="Packets\Out\PacketRoomClear.cs" />
+    <Compile Include="Packets\Out\PacketRoomSave.cs" />
+    <Compile Include="Packets\Out\PacketRoomTitle.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
